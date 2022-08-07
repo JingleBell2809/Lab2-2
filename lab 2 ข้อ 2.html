@@ -1,0 +1,69 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>lab 2 ข้อ 2</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <style>
+        .All-page{
+        border: solid 2px;
+        padding: 5px;
+        width: 50%;
+        }
+    </style>
+</head>
+<body class="All-page">
+    <B>แบบฟอร์มจองทัวร์</B>
+    <div>
+        <form action="form-echo.php" method="get">
+            <br><fieldset style="border:2px solid">
+                <legend>ข้อมูลทั่วไป</legend>
+                ชื่อ-สกุล :
+                <br><input type="text" name="name" required placeholder="กรอกชื่อ-สกุล" pattern="([ก-๏])+\s([ก-๏])+"><span style="color:rgb(255, 30, 30);">*</span>
+                <br> Email :
+                <br><input type="email" name="email" required><span style="color:rgb(255, 30, 30);">*</span>
+                <br>โทรศัพท์ :
+                <br><input type="tel" name="tel" required value="+66" pattern="\+66([1-9]{9})" title="ใส่หมายเลขต่อจาก +66 โดยไม่ต้องใส่เลข0นำหน้าหมายเลข"><span style="color:rgb(255, 30, 30);">*</span>
+                <br>ที่อยู่ :
+                <br><textarea cols='30' rows='3'></textarea>
+                <br>รหัสไปรษณีย์ : 
+                <input type="text" style="width: 60px;" maxlength="5" pattern="[^0][0-9]+" title="ห้ามขึ้นต้นด้วย 0 และใส่ตัวเลข 5 ตัวเท่านั้น" title="กรุณาใส่ตัวเลขจำนวน 5 ตัวเท่านั้น">
+                <br>รูปผู้จอง : 
+                <input type="file" name="file">
+
+            </fieldset>
+            <br><fieldset style="border:2px solid">
+                <legend>ข้อมูลเข้าสู่ระบบ</legend>
+                Username :
+                <br><input type="text" name="Usernae" pattern="\w{8,}">
+                <br><I>ประกอบด้วยตัวเลข ตัวอักษร หรือ_ตั้งแต่ 8 ตัวขึ้นไป</I>
+                <br><br>Password :
+                <br><input type="text" name="password" minlength="8">
+                <br><I>ประกอบด้วยอักขระอะไรก็ได้ 8 ตัวขึ้นไป</I>
+            </fieldset>
+            <br><fieldset style="border:2px solid">
+                <legend>ข้อมูลทัวร์ที่ต้องการ</legend>
+                แพ็คเกจทัวร์ : 
+                <select name="select">
+                    <option value="">--select--</option>
+                    <option value="ไทย">ไทย</option>
+                    <option value="จีน">จีน</option>
+                    <option value="อังกฤษ">อังกฤษ</option>
+                    <option value="สวิตเซอร์แลนด์">สวิตเซอร์แลนด์</option>
+                    <option value="เนเธอร์แลนด์">เนเธอร์แลนด์</option>
+                </select>
+                <br>วันที่เดินทาง :
+                <input type="date">
+                <br>จำนวนผู้เดินทาง : 
+                <input type="text" pattern="[1-9]|10">
+                <br>เน้นการท่องเที่ยวแบบใด?
+                <br><input type="checkbox" name="shopping"> ชอปปิ้ง
+                <br><input type="checkbox" name="natural"> ธรรมชาติ
+                <br><input type="checkbox" name="sea"> ทะเล
+            </fieldset>
+            <br>ยอมรับเงื่อนไขและข้อตกลง 
+            <input type="radio" checked name="agree">I agree
+            <input type="radio" name="disagree">I disagree  
+            <input type="submit" value="จอง">
+        </form>
+    </div>
+</body>
+
